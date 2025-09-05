@@ -107,3 +107,13 @@ console.log(employee.length)
         return emp.gender==='Male'
     })
     console.log(male_Employees.length)
+// Extended operations — filter, map, reduce chaining
+const seniorEmployees = employees
+    .filter(emp => emp.age > 30)
+    .map(emp => ({ ...emp, seniorityBonus: emp.salary * 0.1 }));
+
+console.log("Senior employees with bonus:", seniorEmployees);
+
+// Reduce — total salary
+const totalSalary = employees.reduce((sum, emp) => sum + emp.salary, 0);
+console.log("Total payroll:", totalSalary);
